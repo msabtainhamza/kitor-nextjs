@@ -1,5 +1,5 @@
 import axios from "axios";
-import dbConnect from "@/utils/dbConnect";
+import db from "@/db";
 import UserInsights from "@/models/twitter";
 import { updateTwitterHistoricalData } from "@/utils/twitterHistoricalData";
 
@@ -15,7 +15,7 @@ export async function POST(request) {
   }
 
   try {
-    await dbConnect();
+    await db();
 
     const userInsights = await UserInsights.findOne({ username });
 

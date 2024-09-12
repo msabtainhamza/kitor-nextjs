@@ -27,7 +27,7 @@ export async function POST(req) {
   try {
     const user = await User.create(body);
     return NextResponse.json(
-      { message: "User created successfully", user },
+      { message: "User created successfully", User },
       { status: 201 }
     );
   } catch (error) {
